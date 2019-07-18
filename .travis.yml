@@ -3,7 +3,7 @@ sudo: required
 # services: docker in this case is required
 services: 
   - docker
-# before install he final image, build an image to run tests 
+# before install final image, build an image to run tests 
 before_install:
     # we use the dockerfile for dev. This is ideal for test. Also the image get tagged.
   - docker build -t 79709818/react-test -f ./client/Dockerfile.dev ./client
@@ -21,10 +21,10 @@ after_success:
   - docker build -t 79709818/multi-worker ./worker
 
 # Log into the docker hub CLI 
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 # take those images and push them to docker hub
-docker push 79709818/multi-client
-docker push 79709818/multi-nginx 
-docker push 79709818/multi-server
-docker push 79709818/multi-worker
+  - docker push 79709818/multi-client
+  - docker push 79709818/multi-nginx 
+  - docker push 79709818/multi-server
+  - docker push 79709818/multi-worker
