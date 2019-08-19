@@ -1,4 +1,4 @@
 1. essential attibute in a container marked as "true" means that if this container for any reason goes down, every else container in the group will be automatically be shutdown. Al least one container must be marked as essential.
 hostname is an optional attribute. For instance, worker and nginx could be used without specifying this attibute because nobody (anteher container) access it by its name.
 
-2. test to modify our master ..
+2. "memory": 128: it is required by AWS elasctic beanstalk to specify the amount of memory to allocate for each service. Either way, it will return an error. The amount of memory for advances scenarios must be researched.
