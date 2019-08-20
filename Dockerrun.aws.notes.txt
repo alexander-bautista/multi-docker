@@ -3,4 +3,4 @@ hostname is an optional attribute. For instance, worker and nginx could be used 
 
 2. "memory": 128: it is required by AWS elasctic beanstalk to specify the amount of memory to allocate for each service. Either way, it will return an error. The amount of memory for advances scenarios must be researched.
 
-3. "test"
+3. "test2"
